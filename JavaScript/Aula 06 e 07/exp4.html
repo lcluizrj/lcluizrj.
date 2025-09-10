@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let salarioBruto = Number(prompt("digite seu salario bruto"));
+        let inss = salarioBruto * 0.05;
+        let fgts = salarioBruto * 0.09;
+        let imposto;
+        if (salarioBruto > 3000) {
+            imposto = salarioBruto * 0.15;
+
+
+        }
+        else {
+            imposto = salarioBruto * 0.10;
+
+
+
+        }
+        let desconto = inss + fgts + imposto;
+        let salarioLiquido = salarioBruto - desconto;
+
+        alert(" Seu Salario Liquido é " + salarioLiquido);
+        alert(" O Salario bruto é " + salarioBruto + " \n O imposto INSS " + inss + " \n o imposto ftgs é " + fgts + "\n o imposto sobre renda é " + imposto + "\n o Salario liquido é " + salarioLiquido);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Letra = prompt("Digite aqui sua letra");
+
+        if (Letra) {
+          
+            if (
+                (Letra != 'a' && Letra != 'A') && 
+                (Letra != 'e' && Letra != 'E') && 
+                (Letra != 'i' && Letra != 'I') && 
+                (Letra != 'o' && Letra != 'O') && 
+                (Letra != 'u' && Letra != 'U')
+            ) {
+                alert("A letra digitada é uma consoante.");
+            } else {
+                alert("A letra digitada não é uma consoante, é uma vogal.");
+            }
+        } else {
+            alert("Você não digitou nenhuma letra!");
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let menu = parseInt(prompt("Menu\nDigite uma das opções abaixo:\n1-Somar\n2-Subtrair\n3-Multiplicar\n4-Dividir\n5-Sair "));
+        switch (menu) {
+            case 1: {
+                let n1 = parseInt(prompt("Digite o primeiro número:"));
+                let n2 = parseInt(prompt("Digite o segundo número:"));
+                alert("Resultado da soma: " + (n1 + n2));
+                break;
+            }
+            case 2: {
+                let n1 = parseInt(prompt("Digite o primeiro número:"));
+                let n2 = parseInt(prompt("Digite o segundo número:"));
+                alert("Resultado da subtração: " + (n1 - n2));
+                break;
+            }
+            case 3: {
+                let n1 = parseInt(prompt("Digite o primeiro número:"));
+                let n2 = parseInt(prompt("Digite o segundo número:"));
+                alert("Resultado da multiplicação: " + (n1 * n2));
+                break;
+            }
+            case 4: {
+                let n1 = parseInt(prompt("Digite o primeiro número:"));
+                let n2 = parseInt(prompt("Digite o segundo número:"));
+                if (n2 == 0) {
+                    alert("Erro! Não é possível dividir por zero.");
+                } else {
+                    alert("Resultado da divisão: " + (n1 / n2));
+                }
+                break;
+            }
+            case 5:
+                alert("Saindo do programa...");
+                break;
+            default:
+                alert("Opção inválida! Digite de 1 a 5.");
+        }
+    </script>
+</body>
+
+</html>

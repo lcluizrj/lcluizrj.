@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let nota1 = parseInt(prompt(" Digite sua nota"));
+let nota2 = parseInt(prompt(" Digite sua nota"));
+let nota3 = parseInt(prompt(" Digite sua nota"));
+let nota4 = parseInt(prompt(" Digite sua nota"));
+let media = (nota1+nota2+nota3+nota4) / 4;
+alert(" Sua media Foi " + media);
+
+
+if (media >= 70 && media <= 100) {
+    alert(" voce foi aprovado");
+} else {
+    if (media < 40 && media >= 0 ) {
+        alert(" Voce foi reprovado");
+    } else {
+        if (media >= 40 && media <70) {
+            alert(" Vocé Esta em recuperação");
+        } else {
+            alert(" Opção Invalida");
+        }
+    }
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

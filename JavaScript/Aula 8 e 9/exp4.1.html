@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n1 = Number(prompt(" Digite sua nota"));
+        let n2 = Number(prompt(" Digite sua nota"));
+        let n3 = Number(prompt(" Digite sua nota"));
+        let n4 = Number(prompt(" Digite sua nota"));
+
+        let media = (n1 + n2 + n3 + n4 ) / 4;
+
+        alert(" media e igual a " + media);
+
+        if ( media >= 70 && media <= 100) {
+            alert(" Aprovado Sua nota foi " + media);
+            
+        } else { 
+            if (media <= 40 && media >=0) {
+                alert(" Voce foi reprovado sua nota foi " + media);
+            } else { if ( media >= 40 && media <= 70) {
+                alert(" Voce esta em recuperação " + media);
+            } else {
+                alert(Error);
+            }
+                
+            }
+            
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

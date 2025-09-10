@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let op = prompt("Menu\nEscolha uma opção.\n1-Para somar\n2-para subtrair\n3-para dividir\n4-para multiplicar ");
+
+        alert("a opção escolhida foi " + op);
+
+        if (op == "1") {
+            // Soma
+            let n1 = parseInt(prompt(" Digite o valor"));
+            let n2 = parseInt(prompt(" Digite o valor"));
+            let soma = (n1 + n2);
+
+            alert(" O valor da soma é " + soma);
+        } else {
+            if (op == "2") {
+                // Subtrair
+                let n3 = parseInt(prompt(" Digite o valor"));
+                let n4 = parseInt(prompt(" Digite o valor"));
+                let soma1 = (n3 - n4);
+
+                alert(" O valor da Subtração é " + soma1);
+            } else {
+                if (op == "3") {
+                    // divisão 
+                    let n5 = parseInt(prompt(" Digite o valor"));
+                    let n6 = parseInt(prompt(" Digite o valor"));
+                    let soma2 = (n5 / n6);
+
+                    alert(" O valor da Divisão é " + soma2);
+
+                } else {
+                    if (op == "4") {
+                        // multiplicação
+                        let n7 = parseInt(prompt(" Digite o valor"));
+                        let n8 = parseInt(prompt(" Digite o valor"));
+                        let soma3 = (n7 * n8);
+
+                        alert(" O valor da Multiplicação é " + soma3);
+                    } else { 
+
+                        alert(" Opção invalida");
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
