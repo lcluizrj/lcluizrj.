@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let menu = prompt(" Digite:\n1-Somar\n2-Subtrair\n3-Multiplicar\n4-dividir\n5-sair ");
+
+
+        switch (menu) {
+            case "1":
+                let nu1 = Number(prompt("Digite o primeiro numero"));
+                let nu2 = Number(prompt("Digite o segundo numero"));
+                let soma = nu1 + nu2;
+                document.write("o Resultado da soma é: " + soma);
+                break
+            case "2":
+                let nu3 = Number(prompt("Digite o primeiro numero"));
+                let nu4 = Number(prompt("Digite o segundo numero"));
+                let subtrair = nu3 - nu4;
+                document.write("o Resultado da soma é: " + subtrair);
+                break
+            case "3":
+                let nu5 = Number(prompt("Digite o primeiro numero"));
+                let nu6 = Number(prompt("Digite o segundo numero"));
+                let mult = nu5 * nu6;
+                document.write("o Resultado da soma é: " + mult);
+                break
+            case "4":
+                let nu7 = Number(prompt("Digite o primeiro numero"));
+                let nu8 = Number(prompt("Digite o segundo numero"));
+                let dividir = nu7 / nu8;
+                document.write("o Resultado da soma é: " + dividir);
+                break
+            case "5":
+                document.write(" Tchauu" );
+
+                break;
+
+            default:
+                document.write(" opção invalida" );
+                
+        }
+
+
+    </script>
+</body>
+
+</html>

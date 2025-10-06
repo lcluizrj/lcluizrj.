@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let op;
+        do {
+            op = prompt(" Menu\n\nDigite uma opção\n1- Somar\n2- Subtrair\n3- Multiplicar\n4- Dividir\nS - para sair   ");
+            switch (op) {
+                case "1":
+                    document.write("<br> Somar");
+                    let n1 = parseInt(prompt(" Digite 1° numero"));
+                    let n2 = parseInt(prompt(" Digite 2° numero"));
+                    alert(" A soma de " + n1 + " + " + n2 + " é igual a " + (n1 + n2));
+                    document.write("A soma de " + n1 + " + " + n2 + " é igual a " + (n1 + n2)); 
+                    break;
+
+                case "2":
+                    document.write("<br> Subtrair");
+                    let n3 = parseInt(prompt(" Digite 1° numero"));
+                    let n4 = parseInt(prompt(" Digite 2° numero"));
+                    alert(" A subtração de " + n3 + " - " + n4 + " é igual a " + (n3 - n4));
+                    document.write( "A subtração de " + n3 + " - " + n4 + " é igual a " + (n3 - n4));
+                    break;
+                    case "3":
+                         document.write("<br> Multiplicar");
+                    let n5 = parseInt(prompt(" Digite 1° numero"));
+                    let n6 = parseInt(prompt(" Digite 2° numero"));
+                    alert(" A Multiplicação de " + n5 + " x " + n6 + " é igual a " + (n5 * n6));
+                    document.write(" A Multiplicação de " + n5 + " x " + n6 + " é igual a " + (n5 * n6));
+                    break;
+                    case "4": 
+                        document.write("<br> Dividir");
+                    let n7 = parseInt(prompt(" Digite 1° numero"));
+                    let n8 = parseInt(prompt(" Digite 2° numero"));
+                    alert(" A Multiplicação de " + n7 + " x " + n8 + " é igual a " + (n7 / n8));
+                    document.write(" A Divisão de " + n7 + " / " + n8+ " é igual a " + (n7 / n8));
+                    break;
+                    case "S":
+                        document.write("<BR> Sair");
+                    break;
+                        default:
+                            document.write("<BR> Opção invalida");    
+
+            }
+        } while (op!="S");
+        document.write("<BR> Fim do programa")
+
+
+
+
+
+    </script>
+</body>
+
+</html>

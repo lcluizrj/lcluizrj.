@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhar Retângulo</title>
+</head>
+<body>
+    <script>
+        let comp = parseInt(prompt("Digite o comprimento (largura)"));
+        let altura = parseInt(prompt("Digite a altura"));
+        let simbolo = prompt("Digite o que você quer usar para desenhar");
+
+        for (let i = 0; i < altura; i++) { // controla as linhas (altura)
+            for (let j = 0; j < comp; j++) { // controla as colunas (comprimento)
+                document.write(simbolo);
+            }
+            document.write("<br>"); // quebra a linha no fim de cada linha
+        }
+    </script>
+</body>
+</html>

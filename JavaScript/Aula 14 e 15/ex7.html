@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let comp = parseInt(prompt(" Digite o comprimento"));
+let altura = parseInt(prompt(" Digite altura"));
+let borda = prompt(" Digite borda");
+let dentro = prompt(" Digite caractere interno");
+for (let index = 0; index < altura; index++) {
+    for (let index1 = 0; index1 < comp; index1++) {
+        if (index == 0|| index == altura -1 || index1 == 0 || index1 == comp -1 ) {
+            document.write(borda);
+        } else {
+            document.write(dentro);
+        }
+    }
+    document.write("<br>");
+}
+
+
+    </script>
+</body>
+</html>

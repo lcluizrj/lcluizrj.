@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Verifica número primo</title>
+</head>
+
+<body>
+    <script>
+        let num = parseInt(prompt("Digite um número inteiro positivo:"));
+        let i;
+        for (i = 2; i < num; i++) {
+            if (num % i === 0) {
+                alert(num + " não é primo");
+                break;
+            }
+        }
+
+        if (i === num && num >= 2) {
+            alert(num + " é primo");
+        }
+    </script>
+</body>
+
+</html>

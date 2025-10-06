@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+</head>
+<body>
+    <script>
+        
+        let diaNasc = parseInt(prompt("Digite o dia de nascimento:"));
+        let mesNasc = parseInt(prompt("Digite o mês de nascimento:"));
+        let anoNasc = parseInt(prompt("Digite o ano de nascimento:"));
+
+        let diaAtual = parseInt(prompt("Digite o dia atual:"));
+        let mesAtual = parseInt(prompt("Digite o mês atual:"));
+        let anoAtual = parseInt(prompt("Digite o ano atual:"));
+
+        
+        let diasNoMes;
+
+        
+        let idade = anoAtual - anoNasc;
+
+        
+        if (mesAtual < mesNasc || (mesAtual === mesNasc && diaAtual < diaNasc)) {
+            idade--;
+        }
+
+        
+        switch (mesNasc) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                diasNoMes = 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                diasNoMes = 30;
+                break;
+            case 2:
+                diasNoMes = 28; 
+                break;
+            default:
+                diasNoMes = 0;
+                break;
+        }
+
+        document.write("Você nasceu em " + diaNasc + "/" + mesNasc + "/" + anoNasc + "<br>");
+        document.write("Data atual: " + diaAtual + "/" + mesAtual + "/" + anoAtual + "<br>");
+        document.write("Sua idade é: " + idade + " anos<br>");
+        document.write("O mês do seu nascimento tem " + diasNoMes + " dias.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+        let n1 = Number(prompt("Digite o 1º número:"));
+        let n2 = Number(prompt("Digite o 2º número:"));
+        let n3 = Number(prompt("Digite o 3º número:"));
+        let n4 = Number(prompt("Digite o 4º número:"));
+        let n5 = Number(prompt("Digite o 5º número:"));
+
+        
+        document.write("<p>1º valor é: " + n1 + "</p>");
+        document.write("<p>2º valor é: " + n2 + "</p>");
+        document.write("<p>3º valor é: " + n3 + "</p>");
+        document.write("<p>4º valor é: " + n4 + "</p>");
+        document.write("<p>5º valor é: " + n5 + "</p>");
+
+        
+        let escolha = prompt("Digite: 1 para SOMAR, 2 para SUBTRAIR, 3 para MULTIPLICAR:");
+
+        
+        switch (escolha) {
+            case "1": 
+                let soma = n1 + n2 + n3 + n4 + n5;
+                document.write("<p>A soma dos números é: " + soma + "</p>");
+                break;
+
+            case "2": 
+                let subtracao = n1 - n2 - n3 - n4 - n5;
+                document.write("<p>A subtração dos números é: " + subtracao + "</p>");
+                break;
+
+            case "3": 
+                let multiplicacao = n1 * n2 * n3 * n4 * n5;
+                document.write("<p>A multiplicação dos números é: " + multiplicacao + "</p>");
+                break;
+
+            default:
+                document.write("<p>Opção inválida!</p>");
+        }
+    </script>
+</body>
+
+</html>

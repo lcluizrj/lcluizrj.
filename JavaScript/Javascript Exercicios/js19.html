@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão Prática JavaScript</title>
+</head>
+<body>
+<script>
+
+// --------------------------------------
+// 1️⃣ VARIÁVEIS E ENTRADA DE DADOS
+// --------------------------------------
+
+let nome = prompt("Qual é o seu nome?");
+let idade = parseInt(prompt("Digite sua idade:"));
+let altura = parseFloat(prompt("Digite sua altura (em metros, exemplo: 1.75):"));
+let ativo = true; // variável booleana (true = verdadeiro)
+
+alert("Bem-vindo " + nome + "! Você tem " + idade + " anos e mede " + altura + "m.");
+
+
+// --------------------------------------
+// 2️⃣ OPERADORES MATEMÁTICOS
+// --------------------------------------
+
+let n1 = parseFloat(prompt("Digite um número:"));
+let n2 = parseFloat(prompt("Digite outro número:"));
+
+alert("Soma: " + (n1 + n2));
+alert("Subtração: " + (n1 - n2));
+alert("Multiplicação: " + (n1 * n2));
+alert("Divisão: " + (n1 / n2));
+alert("Resto da divisão: " + (n1 % n2));
+
+
+// --------------------------------------
+// 3️⃣ OPERADORES LÓGICOS
+// --------------------------------------
+
+if (idade >= 18 && idade <= 60) {
+    alert("Você está na faixa adulta.");
+} else if (idade < 18 || idade > 60) {
+    alert("Você está fora da faixa adulta.");
+}
+
+
+// --------------------------------------
+// 4️⃣ IF / ELSE
+// --------------------------------------
+
+let numero = parseInt(prompt("Digite um número inteiro:"));
+
+if (numero % 2 === 0) {
+    alert(numero + " é par.");
+} else {
+    alert(numero + " é ímpar.");
+}
+
+
+// --------------------------------------
+// 5️⃣ SWITCH
+// --------------------------------------
+
+let opcao = prompt("Escolha uma opção: A, B ou C").toUpperCase();
+
+switch (opcao) {
+    case "A":
+        alert("Você escolheu a opção A.");
+        break;
+    case "B":
+        alert("Você escolheu a opção B.");
+        break;
+    case "C":
+        alert("Você escolheu a opção C.");
+        break;
+    default:
+        alert("Opção inválida!");
+        break;
+}
+
+
+// --------------------------------------
+// 6️⃣ FOR
+// --------------------------------------
+
+alert("Agora vamos contar de 1 até 5 com FOR:");
+
+for (let i = 1; i <= 5; i++) {
+    alert("Número: " + i);
+}
+
+
+// --------------------------------------
+// 7️⃣ WHILE
+// --------------------------------------
+
+let contador = 1;
+alert("Agora vamos usar o WHILE até 3:");
+
+while (contador <= 3) {
+    alert("While rodando: " + contador);
+    contador++;
+}
+
+
+// --------------------------------------
+// 8️⃣ DO...WHILE
+// --------------------------------------
+
+let x = 1;
+alert("Agora o DO...WHILE até 3 também:");
+
+do {
+    alert("Do While número: " + x);
+    x++;
+} while (x <= 3);
+
+
+// --------------------------------------
+// 9️⃣ FUNCTION (sem parâmetro)
+// --------------------------------------
+
+function saudacao() {
+    alert("Função executada! Olá, " + nome + "!");
+}
+
+saudacao(); // executa
+
+
+// --------------------------------------
+// 🔟 FUNCTION (com parâmetro)
+// --------------------------------------
+
+function multiplicar(a, b) {
+    return a * b;
+}
+
+let valor1 = parseInt(prompt("Digite um número para multiplicar:"));
+let valor2 = parseInt(prompt("Digite outro número:"));
+alert("Resultado da multiplicação: " + multiplicar(valor1, valor2));
+
+
+// --------------------------------------
+// 1️⃣1️⃣ ARRAYS
+// --------------------------------------
+
+let frutas = ["Maçã", "Banana", "Uva"];
+alert("Frutas iniciais: " + frutas.join(", "));
+
+let novaFruta = prompt("Digite uma nova fruta para adicionar:");
+frutas.push(novaFruta);
+
+alert("Frutas atualizadas: " + frutas.join(", "));
+
+
+// --------------------------------------
+// 1️⃣2️⃣ FOREACH
+// --------------------------------------
+
+alert("Listando frutas com forEach:");
+
+frutas.forEach((fruta, indice) => {
+    alert("Posição " + indice + ": " + fruta);
+});
+
+
+// --------------------------------------
+// 1️⃣3️⃣ TABELA DE OPERADORES (resumo)
+// --------------------------------------
+/*
+--------------------------------------------
+| Tipo               | Símbolo | Exemplo   |
+|--------------------|----------|-----------|
+| Igualdade          | ==       | a == b    |
+| Igual estrito      | ===      | a === b   |
+| Diferente          | !=       | a != b    |
+| Diferente estrito  | !==      | a !== b   |
+| Maior que          | >        | a > b     |
+| Menor que          | <        | a < b     |
+| Maior ou igual     | >=       | a >= b    |
+| Menor ou igual     | <=       | a <= b    |
+| E lógico           | &&       | a && b    |
+| OU lógico          | ||       | a || b    |
+| Negação lógica     | !        | !a        |
+--------------------------------------------
+*/
+
+</script>
+</body>
+</html>

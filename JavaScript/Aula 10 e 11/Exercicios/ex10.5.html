@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let opcao = prompt(
+            "Digite uma das opções abaixo:\n" +
+            "1 - Calcular área de um retângulo\n" +
+            "2 - Calcular área de um triângulo equilátero\n" +
+            "3 - Calcular área de um círculo\n" +
+            "4 - Calcular a média de 4 notas\n" +
+            "5 - Calcular volume de um paralelepípedo\n" +
+            "6 - Calcular volume de uma esfera\n" +
+            "7 - Verificar o maior número entre 4 números\n" +
+            "8 - Verificar o menor número entre 5 números\n" +
+            "9 - Calcular a idade (data atual e nascimento)\n" +
+            "s - Sair"
+        );
+
+        switch (opcao) {
+            case "1":
+                let baseR = parseFloat(prompt("Digite a base do retângulo:"));
+                let alturaR = parseFloat(prompt("Digite a altura do retângulo:"));
+                alert("Área do retângulo = " + (baseR * alturaR));
+                break;
+
+            case "2":
+                let ladoT = parseFloat(prompt("Digite o lado do triângulo equilátero:"));
+                let areaT = (Math.pow(ladoT, 2) * Math.sqrt(3)) / 4;
+                alert("Área do triângulo equilátero = " + areaT.toFixed(2));
+                break;
+
+            case "3":
+                let raioC = parseFloat(prompt("Digite o raio do círculo:"));
+                let areaC = Math.PI * Math.pow(raioC, 2);
+                alert("Área do círculo = " + areaC.toFixed(2));
+                break;
+
+            case "4":
+                let somaNotas = 0;
+                for (let i = 1; i <= 4; i++) {
+                    somaNotas += parseFloat(prompt("Digite a nota " + i + ":"));
+                }
+                alert("Média das notas = " + (somaNotas / 4).toFixed(2));
+                break;
+
+            case "5":
+                let comp = parseFloat(prompt("Digite o comprimento do paralelepípedo:"));
+                let larg = parseFloat(prompt("Digite a largura do paralelepípedo:"));
+                let alt = parseFloat(prompt("Digite a altura do paralelepípedo:"));
+                alert("Volume do paralelepípedo = " + (comp * larg * alt));
+                break;
+
+            case "6":
+                let raioE = parseFloat(prompt("Digite o raio da esfera:"));
+                let volumeE = (4 / 3) * Math.PI * Math.pow(raioE, 3);
+                alert("Volume da esfera = " + volumeE.toFixed(2));
+                break;
+
+            case "7":
+                let maior = -Infinity;
+                for (let i = 1; i <= 4; i++) {
+                    let num = parseFloat(prompt("Digite o número " + i + ":"));
+                    if (num > maior) maior = num;
+                }
+                alert("O maior número digitado foi: " + maior);
+                break;
+
+            case "8":
+                let menor = Infinity;
+                for (let i = 1; i <= 5; i++) {
+                    let num = parseFloat(prompt("Digite o número " + i + ":"));
+                    if (num < menor) menor = num;
+                }
+                alert("O menor número digitado foi: " + menor);
+                break;
+
+            case "9":
+                let diaNasc = parseInt(prompt("Digite o dia de nascimento:"));
+                let mesNasc = parseInt(prompt("Digite o mês de nascimento:"));
+                let anoNasc = parseInt(prompt("Digite o ano de nascimento:"));
+
+                let diaAtual = parseInt(prompt("Digite o dia atual:"));
+                let mesAtual = parseInt(prompt("Digite o mês atual:"));
+                let anoAtual = parseInt(prompt("Digite o ano atual:"));
+
+                let idade = anoAtual - anoNasc;
+                if (mesAtual < mesNasc || (mesAtual === mesNasc && diaAtual < diaNasc)) {
+                    idade--;
+                }
+                alert("Sua idade é: " + idade + " anos");
+                break;
+
+            case "s":
+                alert("Saindo do programa...");
+                break;
+
+            default:
+                alert("Opção inválida!");
+                break;
+        }
+    </script>
+</body>
+</html>
+

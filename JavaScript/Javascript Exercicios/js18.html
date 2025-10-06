@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão JavaScript</title>
+</head>
+<body>
+<script>
+
+// ---------------------------
+// VARIÁVEIS
+// ---------------------------
+
+let nome = "Luiz"; // armazena texto (string)
+let idade = 25;    // armazena número inteiro
+let altura = 1.75; // número com casa decimal
+let ativo = true;  // valor lógico (booleano)
+
+
+// ---------------------------
+// OPERADORES MATEMÁTICOS
+// ---------------------------
+// + soma, - subtração, * multiplicação, / divisão, % resto da divisão
+
+let a = 10;
+let b = 3;
+console.log("Soma: " + (a + b));        // 13
+console.log("Subtração: " + (a - b));   // 7
+console.log("Multiplicação: " + (a * b)); // 30
+console.log("Divisão: " + (a / b));     // 3.333...
+console.log("Resto: " + (a % b));       // 1
+
+
+// ---------------------------
+// OPERADORES LÓGICOS
+// ---------------------------
+// && (E) - só é verdadeiro se as duas condições forem verdadeiras
+// || (OU) - verdadeiro se pelo menos uma for verdadeira
+// ! (NÃO) - inverte o valor lógico
+
+let idadePessoa = 20;
+if (idadePessoa >= 18 && idadePessoa <= 60) {
+    console.log("Adulto");
+}
+if (idadePessoa < 18 || idadePessoa > 60) {
+    console.log("Fora da faixa adulta");
+}
+if (!ativo) {
+    console.log("Usuário inativo");
+}
+
+
+// ---------------------------
+// IF / ELSE
+// ---------------------------
+
+let numero = 8;
+if (numero % 2 === 0) {
+    console.log(numero + " é par");
+} else {
+    console.log(numero + " é ímpar");
+}
+
+
+// ---------------------------
+// SWITCH
+// ---------------------------
+
+let opcao = "B";
+
+switch (opcao) {
+    case "A":
+        console.log("Você escolheu A");
+        break;
+    case "B":
+        console.log("Você escolheu B");
+        break;
+    case "C":
+        console.log("Você escolheu C");
+        break;
+    default:
+        console.log("Opção inválida");
+        break;
+}
+
+
+// ---------------------------
+// FOR
+// ---------------------------
+// Estrutura: for(início; condição; incremento)
+
+for (let i = 1; i <= 5; i++) {
+    console.log("Contando: " + i);
+}
+
+
+// ---------------------------
+// WHILE
+// ---------------------------
+// Repete enquanto a condição for verdadeira
+
+let contador = 1;
+while (contador <= 5) {
+    console.log("While: " + contador);
+    contador++;
+}
+
+
+// ---------------------------
+// DO...WHILE
+// ---------------------------
+// Executa primeiro, depois testa a condição
+
+let x = 1;
+do {
+    console.log("Do While: " + x);
+    x++;
+} while (x <= 5);
+
+
+// ---------------------------
+// FUNCTION (sem parâmetro)
+// ---------------------------
+
+function saudacao() {
+    console.log("Olá, " + nome + "! Bem-vindo ao JavaScript!");
+}
+
+saudacao(); // executa a função
+
+
+// ---------------------------
+// FUNCTION (com parâmetro)
+// ---------------------------
+
+function somar(n1, n2) {
+    return n1 + n2; // retorna o resultado
+}
+
+let resultado = somar(5, 3);
+console.log("A soma é: " + resultado);
+
+
+// ---------------------------
+// ARRAYS (listas)
+// ---------------------------
+
+let frutas = ["Maçã", "Banana", "Uva"];
+console.log(frutas[0]); // mostra "Maçã"
+console.log(frutas[1]); //

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularQuadrado(base, altura) {
+            let ladoa = parseInt(prompt(" Digite area a"));
+            let ladob = parseInt(prompt(" Digite area b"));
+            let resultado = ladoa * ladob;
+            alert(" O valor da área é " + resultado);
+        }
+        function calcularPerimetroTriangulo() {
+            let n1 = parseInt(prompt(" Digite primeiro valor"));
+            let n2 = parseInt(prompt(" Digite segundo valor"));
+            let n3 = parseInt(prompt(" Digite terceiro valor"));
+            let resultado = n1 + n2 + n3;
+
+            alert(" O resultado é " + resultado);
+        }
+        function calcularAreaCirculo() {
+            let raio = parseFloat(prompt("Digite o valor do raio do círculo:"));
+            let area = Math.PI * raio * raio;
+            alert(" A area do circulo é " + area);
+
+        }
+        function mediaAritmetica() {
+            let n1 = parseInt(prompt(" Digite a primeira nota"));
+            let n2 = parseInt(prompt(" Digite a segunda nota"));
+            let n3 = parseInt(prompt(" Digite a terceira nota"));
+            let n4 = parseInt(prompt(" Digite a quarta nota"));
+            let resultado = (n1 + n2 + n3 + n4) / 4;
+            alert(" A media é " + resultado);
+        }
+        function maiorNum() {
+            let n1 = parseInt(prompt(" Digite o primeiro valor"));
+            let n2 = parseInt(prompt(" Digite o segundo valor"));
+            let n3 = parseInt(prompt(" Digite o terceiro valor"));
+            let maior;
+
+            if (n1 >= n2 && n1 >= n3) {
+                maior = n1;
+            } else
+                if (n2 >= n1 && n2 >= n3) {
+                    maior = n2;
+                } else {
+                    maior = n3;
+                }
+
+            alert("O maior número é: " + maior);
+        }
+
+
+        let op;
+        do {
+
+            op = prompt(" Menu\n\nDigite uma opção\n1- Calcular área de um quadrado\n2- Calcular perimetro e um triangulo\n3- Calcular área de um circulo\n4- Calcular média aritmetica de 4 notas\n5- Para ler 3 numeros e dizer qual é o maior valor\n6- Para ler 1 numero e verificar se ele é positivo, negativo ou nulo\n7- Para ler 1 numero e verificar se ele é um numero primo\n8- Sair ");
+            switch (op) {
+                case "1": {
+                    calcularQuadrado()
+                    break;
+                }
+                case "2": {
+                    calcularPerimetroTriangulo()
+                    break;
+
+                }
+                case "3": {
+                    calcularAreaCirculo()
+                    break;
+
+                }
+                case "4": {
+                    mediaAritmetica()
+                    break;
+
+                }
+                case "5": {
+                    maiorNum()
+                    break;
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+        }
+        while (op != "8");
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let menu = prompt(" Digite:\n1-Somar\n2-Subtrair\n3-Multiplicar\n4-dividir\n5-sair ");
+        switch (menu) {
+            case "1": {
+                let num1 = parseInt(prompt(" Digite o primeiro numero"));
+                let num2 = parseInt(prompt(" Digite o segundo numero"));
+                let soma = num1 + num2;
+                alert("o resultado é " + soma);
+                break
+            }
+            case "2": {
+                let num3 = parseInt(prompt(" Digite o primeiro numero"));
+                let num4 = parseInt(prompt(" Digite o segundo numero"));
+                let subtrair = num3 - num4;
+                alert("o resultado é " + subtrair);
+                break
+            }
+            case "3": {
+                let num5 = parseInt(prompt(" Digite o primeiro numero"));
+                let num6 = parseInt(prompt(" Digite o segundo numero"));
+                let multiplicar = num5 * num6;
+                alert("o resultado é " + multiplicar);
+                break
+            }
+            case "4": {
+                let num7 = parseInt(prompt(" Digite o primeiro numero"));
+                let num8 = parseInt(prompt(" Digite o segundo numero"));
+                let dividir = num7 / num8;
+                alert("o resultado é " + dividir);
+                break
+            }
+
+            case "5":
+                alert(" Tchau...");
+
+            default:
+                alert(" Opção invalida");
+
+        }
+
+    </script>
+</body>
+
+</html>

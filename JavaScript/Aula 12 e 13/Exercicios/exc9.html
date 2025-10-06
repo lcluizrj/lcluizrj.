@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = parseInt(prompt(" Digite aqui seu numero."));
+        let Indice = 0;
+        let Divisor = 1;
+
+        while (Divisor <= num) {
+            if (num % Divisor == 0) {
+                Indice++;
+            }
+            if (Indice > 2) {
+                break;
+            }
+            Divisor++;
+        }
+        if (Indice == 2) {
+            alert(" numero é primo!")
+        } else {
+            alert(" numero não é primo.")
+        }
+
+
+
+    </script>
+</body>
+
+</html>

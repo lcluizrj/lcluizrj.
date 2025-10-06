@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function somar(valor1, valor2) {
+            let resultado = valor1 + valor2;
+            return resultado;
+        }
+
+        function subtrair(valor1, valor2) {
+            let resultado = valor1 - valor2;
+            return resultado;
+        }
+
+        function multiplicar(valor1, valor2) {
+            let resultado = valor1 * valor2;
+            return resultado;
+        }
+
+        function dividir(valor1, valor2) {
+            let resultado = valor1 / valor2;
+            return resultado;
+        }
+
+        let op;
+        do {
+            op = prompt("Menu\n\nDigite uma opção\n1- Somar\n2- Subtrair\n3- Multiplicar\n4- Dividir\nS - para sair");
+
+            switch (op) {
+                case "1": {
+                    let n1 = parseInt(prompt("Digite o primeiro valor"));
+                    let n2 = parseInt(prompt("Digite o segundo valor"));
+                    let resultado = somar(n1,n2);
+                    alert("O resultado é " + resultado);
+                    break;
+                }
+                case "2": {
+                    let n1 = parseInt(prompt("Digite o primeiro valor"));
+                    let n2 = parseInt(prompt("Digite o segundo valor"));
+                    alert("O resultado é " + subtrair(n1, n2));
+                    break;
+                }
+                case "3": {
+                    let n1 = parseInt(prompt("Digite o primeiro valor"));
+                    let n2 = parseInt(prompt("Digite o segundo valor"));
+                    alert("O resultado é " + multiplicar(n1, n2));
+                    break;
+                }
+                case "4": {
+                    let n1 = parseInt(prompt("Digite o primeiro valor"));
+                    let n2 = parseInt(prompt("Digite o segundo valor"));
+                    alert("O resultado é " + dividir(n1, n2));
+                    break;
+                }
+            }
+        } while (op != "S" && op != "s");
+    </script>
+</body>
+
+</html>
