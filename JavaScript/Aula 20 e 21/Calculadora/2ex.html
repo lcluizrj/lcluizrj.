@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+<label for="" >Nome</label>
+<input type="text" id="iname">
+<button>Verificar Nome</button>
+<p ></p>
+
+<div>
+<label for="" > Idade</label>
+<input type="text" name = "idade" id = "iidade">
+<button onclick="verificarIdade()">Verificar Idade</button>
+<p id= "iparagrafo"></p>
+
+
+</div>
+
+    <script>
+function verificarIdade() {
+    let idade = parseInt(document.getElementById("iidade").value);
+    if (idade<0) {
+        document.getElementById("iparagrafo").innerHTML = " Idade invalida";
+    } else {
+        if (idade>=0 && idade <18) {
+            document.getElementById("iparagrafo").innerHTML = " Menor Idade";
+        } else {
+            document.getElementById("iparagrafo").innerHTML = "";
+        }
+    }
+}
+
+    </script>
+</body>
+</html>

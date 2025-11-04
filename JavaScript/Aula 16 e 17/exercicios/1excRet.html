@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function somar(n1, n2) {
+            let resultado = n1 + n2;
+            return resultado;
+        }
+        function subtrair(n1, n2) {
+            let resultado = n1 - n2;
+            return resultado;
+        }
+        function multiplicar(n1, n2) {
+            let resultado = n1 * n2;
+            return resultado;
+        }
+        function dividir(n1, n2) {
+            let resultado = n1 / n2;
+            return resultado;
+        }
+        let op;
+        do {
+
+            op = prompt("Digite uma das opções abaixo:\n1- Somar\n2- Subtrair\n3- Multiplicar\n4- Dividir\n5- Sair");
+
+            switch (op) {
+                case "1": {
+                    let n1 = parseInt(prompt(" Digite o primeiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let resultado = somar(n1, n2);
+                    alert(" A soma é " + resultado);
+                    break;
+                }
+                case "2": {
+                    let n1 = parseInt(prompt(" Digite o primeiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let resultado = subtrair(n1, n2);
+                    alert(" A subtração é " + resultado);
+                    break;
+                }
+                case "3": {
+                    let n1 = parseInt(prompt(" Digite o primeiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let resultado = multiplicar(n1, n2);
+                    alert(" A multiplicação é " + resultado);
+                    break;
+                }
+                case "4": {
+                    let n1 = parseInt(prompt(" Digite o primeiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let resultado = dividir(n1, n2);
+                    alert(" A divisão é " + resultado);
+                    break;
+                }
+
+            }
+
+
+
+
+
+        } while (op != "5");
+
+
+
+
+    </script>
+</body>
+
+</html>

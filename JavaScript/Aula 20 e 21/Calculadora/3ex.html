@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p> Questionario</p>
+        <input type="radio" name =q1 id="iq1a" checked="true"> <label for="" id="il1a">Paraaaaa</label><br>
+         <input type="radio" name =q1 id="iq1b" checked="true"> <label for="" id="il1b">Paraaaaa</label><br>
+          <input type="radio" name =q1 id="iq1c" checked="true"> <label for="" id="il1c">Paraaaaa</label><br>
+           <input type="radio" name =q1 id="iq1d" checked="true"> <label for="" id="il1d">Paraaaaa</label><br>
+           <button onclick="verificarResposta()"> Verificar Respostas</button>
+    </div>
+    <Script>
+let nota =0;
+function verificarResposta() {
+ if (document.getElementById("iq1c").checked) {
+                document.getElementById("il1c").style.color = "green";
+            } else {
+                if (document.getElementById("iq1a").checked) {
+                    document.getElementById("il1a").style.color = "red";
+                }
+                if (document.getElementById("iq1b").checked) {
+                    document.getElementById("il1b").style.color = "red";
+                }
+                if (document.getElementById("iq1d").checked) {
+                    document.getElementById("il1d").style.color = "red";
+                }
+            }
+
+}
+
+
+
+    </Script>
+</body>
+</html>

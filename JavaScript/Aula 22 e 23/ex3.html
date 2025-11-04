@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Primeiro numero</label>
+    <input type="text" id= "iinput1" onchange="mostrarlog()"><br>
+    <label for="">Segundo numero</label>
+     <input type="text" id= "iinput2" onchange="mostrarlog2()"><br>
+     <button onclick="somar()">somar</button>
+     <button onclick="subtração()">subtração</button>
+     <button onclick="divisao()">divisao</button>
+     <button onclick="multiplicar()">multiplicar</button><br>
+     <label for="">Resultado</label>
+     <input type="text" id="iresultado">
+     
+
+    <script>
+       
+        function mostrarlog() {
+            let log = document.getElementById("iinput1").value
+            console.log(log);
+        }
+          function mostrarlog2() {
+            let log2 = document.getElementById("iinput2").value
+            console.log(log2);
+        }
+        function somar() {
+           let resultado = document.getElementById("iinput1").value
+           let resultado2 = document.getElementById("iinput2").value
+           let geral = Number(resultado) + Number(resultado2);
+           document.getElementById("iresultado").value = geral;
+        }
+        function subtração() {
+           let resultado = document.getElementById("iinput1").value
+           let resultado2 = document.getElementById("iinput2").value
+           let geral = Number(resultado) - Number(resultado2);
+           document.getElementById("iresultado").value = geral;
+        }
+        function divisao() {
+           let resultado = document.getElementById("iinput1").value
+           let resultado2 = document.getElementById("iinput2").value
+           let geral = Number(resultado) / Number(resultado2);
+           document.getElementById("iresultado").value = geral;
+        }
+        function multiplicar() {
+           let resultado = document.getElementById("iinput1").value
+           let resultado2 = document.getElementById("iinput2").value
+           let geral = Number(resultado) * Number(resultado2);
+           document.getElementById("iresultado").value = geral;
+        }
+
+    </script>
+    
+</body>
+</html>

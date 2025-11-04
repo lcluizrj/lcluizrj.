@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularQuadrado(n1, n2) {
+            let resultado = n1 * n2;
+            return resultado;
+        }
+        function calcularPerimetroTrianguloRetangulo(cateto1, cateto2) {
+            let hipotenusa = Math.sqrt((cateto1 ** 2) + (cateto2 ** 2));
+            let perimetro = cateto1 + cateto2 + hipotenusa;
+            return perimetro;
+        }
+        function calcularAreaCirculo(raio) {
+            let resultado = Math.PI * raio * raio;
+            return resultado;
+        }
+        function mediaAritmetica(n1, n2, n3, n4) {
+            let resultado = (n1 + n2 + n3 + n4) / 4;
+            return resultado;
+        }
+        function maiorNum(n1, n2, n3, n4) {
+            let resultado;
+            if (n1 >= n2 && n1 >= n3 && n1 >= n4) {
+                resultado = n1;
+            } else {
+                if (n2 >= n1 && n2 >= n3 && n2 >= n4) {
+                    resultado = n2;
+                } else {
+                    if (n3 >= n1 && n3 >= n2 && n3 >= n4) {
+                        resultado = n3;
+                    } else {
+                        resultado = n4;
+                    }
+                }
+            }
+            return resultado;
+        }
+        function menorNum(n1, n2, n3, n4, n5) {
+            let resultado;
+            if (n1 <= n2 && n1 <= n3 && n1 <= n4 && n1 <= n5) {
+                resultado = n1;
+            } else {
+                if (n2 <= n1 && n2 <= n3 && n2 <= n4 && n2 <= n5) {
+                    resultado = n2;
+                } else {
+                    if (n3 <= n1 && n3 <= n2 && n3 <= n4 && n3 <= n5) {
+                        resultado = n3;
+                    } else {
+                        if (n4 <= n1 && n4 <= n2 && n4 <= n3 && n4 <= n5) {
+                            resultado = n4;
+                        } else {
+                            resultado = n5;
+                        }
+                    }
+                }
+            }
+            return resultado;
+        }
+        function posNegNul(n1) {
+            let resultado;
+            if (n1 === 0) {
+                resultado = " numero é Nulo";
+            } else {
+                if (n1 > 1) {
+                    resultado = " Numero é positivo";
+                } else {
+                    resultado = " Numero é negativo";
+                }
+            }
+            return resultado;
+        }
+        function numPrimo(n1) {
+            let resultado;
+            let contador = 0;
+            for (i = 1; i <= n1; i++) {
+                if (n1 % i === 0) {
+                    contador++
+                }
+
+            }
+            if (contador === 2) {
+                resultado = " É Numero primo";
+            } else {
+                resultado = " Não é numero primo";
+            }
+            return resultado
+        }
+        let op;
+        do {
+            op = prompt(" Menu\n\nDigite uma opção\n1- Calcular área de um quadrado\n2- Calcular perimetro e um triangulo\n3- Calcular área de um circulo\n4- Calcular média aritmetica de 4 notas\n5- Para ler 4 numeros e dizer qual é o maior valor\n6- Para ler 5 numeros e verificar qual é o menor\n7- Para ler 1 número e verificar se ele é positivo, negativo ou nulo\n8- Para ler 1 número e verificar se ele é um número primo\nS - Sair ");
+            switch (op) {
+                case "1": {
+                    let n1 = parseInt(prompt(" Digite o primeiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let resultado = calcularQuadrado(n1, n2);
+                    alert(" A área do quadrado é " + resultado);
+                    break;
+                }
+                case "2": {
+                    let cateto1 = parseFloat(prompt("Digite o primeiro cateto:"));
+                    let cateto2 = parseFloat(prompt("Digite o segundo cateto:"));
+                    let resultado = calcularPerimetroTrianguloRetangulo(cateto1, cateto2);
+                    alert("Perímetro do triângulo retângulo é: " + resultado.toFixed(2));
+                    break;
+                }
+
+                case "3": {
+                    let raio = parseInt(prompt(" Digite o raio "));
+                    resultado = calcularAreaCirculo(raio);
+                    alert(" Á do circulo é " + raio);
+                    break;
+                }
+                case "4": {
+                    let n1 = parseInt(prompt(" Digite o priemiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let n3 = parseInt(prompt(" Digite o terceiro valor"));
+                    let n4 = parseInt(prompt(" Digite o quarto valor"));
+                    resultado = mediaAritmetica(n1, n2, n3, n4);
+                    alert("A media é " + resultado);
+                    break;
+                }
+                case "5": {
+                    let n1 = parseInt(prompt(" Digite o priemiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let n3 = parseInt(prompt(" Digite o terceiro valor"));
+                    let n4 = parseInt(prompt(" Digite o quarto valor"));
+                    resultado = maiorNum(n1, n2, n3, n4);
+                    alert("O Maior valor é " + resultado);
+                    break;
+                }
+                case "6": {
+                    let n1 = parseInt(prompt(" Digite o priemiro valor"));
+                    let n2 = parseInt(prompt(" Digite o segundo valor"));
+                    let n3 = parseInt(prompt(" Digite o terceiro valor"));
+                    let n4 = parseInt(prompt(" Digite o quarto valor"));
+                    let n5 = parseInt(prompt(" Digite o quinto valor"));
+                    resultado = menorNum(n1, n2, n3, n4, n5);
+                    alert("O menor valor é " + resultado);
+                    break;
+                }
+                case "7": {
+                    let n1 = parseInt(prompt(" Digite o valor"));
+                    resultado = posNegNul(n1);
+                    alert(resultado);
+                    break;
+                }
+                case "8": {
+                    let n1 = parseInt(prompt(" Digite o valor"));
+                    resultado = numPrimo(n1);
+                    alert(resultado);
+                    break;
+                }
+
+
+            }
+
+
+
+
+        } while (op != "S");
+    </script>
+</body>
+
+</html>

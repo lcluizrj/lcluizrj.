@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('voce tem prova a realizar')"> Gerar evento</button>
+
+
+    <button onclick="somar(2500,1000)"> somar</button>
+    <button onclick="subtrair(2500,1000)"> subtrair</button>
+    <button onclick="dividir(2500,1000)"> dividir</button>
+    <button onclick="multiplicar(2500,1000)"> multiplicar</button>
+    <button onclick="calcularDesconto(33)"> Calcular Desconto</button>
+    <script>
+        function somar(x, y) {
+            console.log(x + y)
+           
+        }
+        function subtrair(x, y) {
+            console.log(x - y)
+           
+        }
+        function dividir(x, y) {
+            console.log(x / y)
+           
+        }
+        function multiplicar(x, y) {
+            console.log(x * y)
+           
+        }
+        function calcularDesconto(preco) {
+            let porcentagem = 0.15;
+            console.log(preco*porcentagem);
+        }
+        function mostrarlog() {
+            let log = document.getElementById("iinput1").value
+            console.log("log")
+        }
+    </script>
+    <input type="text" id= "iinput1" onchange="console.log()">
+</body>
+</html>

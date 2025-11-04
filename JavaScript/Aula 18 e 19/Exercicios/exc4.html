@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div {
+            width: 187px;
+            height: 235px;
+            border: solid black;
+        }
+
+        button {
+            height: 30px;
+            width: 40px;
+            margin-left: 3px;
+            margin-top: 4px;
+        }
+
+        input {
+            width: 177px;
+            height: 50px;
+            margin-left: 1px;
+            text-align: right;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="visor" id="ivisor">
+        <br>
+        <button onclick="mostrarCe()">CE</button>
+        <button onclick="mostrarC()">C</button>
+        <button onclick="mostrarOn()">ON</button>
+        <button onclick="mostrarcOff()">OFF</button>
+        <br>
+        <button onclick="mostrar7()">7</button>
+        <button onclick="mostrar8()">8</button>
+        <button onclick="mostrar9()">9</button>
+        <button onclick="mostrarMais()">+</button>
+        <br>
+        <button onclick="mostrar4()">4</button>
+        <button onclick="mostrar5()">5</button>
+        <button onclick="mostrar6()">6</button>
+        <button onclick="mostrarMenos()">-</button>
+        <br>
+        <button onclick="mostrar1()">1</button>
+        <button onclick="mostrar2()">2</button>
+        <button onclick="mostrar3()">3</button>
+        <button onclick="mostrarMultiplicar()">*</button>
+        <br>
+        <button onclick="mostrarPonto()">.</button>
+        <button onclick="mostrar0()">0</button>
+        <button onclick="mostrarDividir()">/</button>
+        <button onclick="total()">=</button>
+        <br>
+
+
+    </div>
+    <script>
+        function mostrarCe() {
+            let visor = document.getElementById("ivisor");
+            let contador = visor.value;
+            let nova = "";
+            for (let i = 0; i < contador.length - 1; i++) {
+                nova = nova + contador[i];
+            }
+            visor.value = nova;
+        }
+        function mostrarC() {
+            let visor = document.getElementById("ivisor").value = 0;
+
+
+        }
+
+        function mostrarOn() {
+            let visor = document.getElementById("ivisor").value = 0;
+
+        }
+        function mostrarcOff() {
+            let visor = document.getElementById("ivisor").value = " ";
+
+        }
+        function mostrar7() {
+            let visor = document.getElementById("ivisor").value
+            if (visor == "0") {
+                document.getElementById("ivisor").value = 7;
+            } else {
+                let concatenar = visor + 7;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar8() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 8;
+            } else {
+                let concatenar = visor + 8;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar9() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 9;
+            } else {
+                let concatenar = visor + 9;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrarMais() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = "+";
+            } else {
+                let concatenar = visor + "+";
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar4() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 4;
+            } else {
+                let concatenar = visor + 4;
+                document.getElementById("ivisor").value = concatenar;
+            }
+        }
+        function mostrar5() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 5;
+            } else {
+                let concatenar = visor + 5;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar6() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 6;
+            } else {
+                let concatenar = visor + 6;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrarMenos() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = "-"
+            } else {
+                let concatenar = visor + "-";
+                document.getElementById("ivisor").value = concatenar;
+            }
+        }
+        function mostrar1() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 1;
+            } else {
+                let concatenar = visor + 1;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar2() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 2;
+            } else {
+                let concatenar = visor + 2;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar3() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 3;
+            } else {
+                let concatenar = visor + 3;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrarMultiplicar() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = "*";
+            } else {
+                let concatenar = visor + "*";
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrarPonto() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = ".";
+            } else {
+                let concatenar = visor + ".";
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrar0() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = 0;
+            } else {
+                let concatenar = visor + 0;
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function mostrarDividir() {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == 0) {
+                document.getElementById("ivisor").value = "/";
+            } else {
+                let concatenar = visor + "/";
+                document.getElementById("ivisor").value = concatenar;
+            }
+
+        }
+        function total() {
+            let soma = document.getElementById("ivisor").value;
+            if (soma=="") {
+                document.getElementById("ivisor").value = 0;
+            } else {
+                let resultado = eval(soma);
+                document.getElementById("ivisor").value = resultado;
+            }
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

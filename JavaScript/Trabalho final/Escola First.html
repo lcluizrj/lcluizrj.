@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Escola First - Portal de Exercícios</title>
+    <style>
+        :root {
+            --blue: #1e4fa3;
+            --light: #f5f5f5;
+            --muted: #666;
+            --card: #fff;
+            --btn: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+            color: #222
+        }
+
+        header {
+            background: var(--blue);
+            color: #fff;
+            padding: 20px 16px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        /* small shield logo */
+        .shield {
+            width: 48px;
+            height: 48px;
+            background: #123d7a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 24px
+        }
+
+        main {
+            display: flex;
+            min-height: calc(100vh - 80px)
+        }
+
+        nav {
+            width: 280px;
+            background: var(--light);
+            padding: 20px;
+            border-right: 1px solid #e6e6e6;
+            overflow: auto;
+        }
+
+        nav .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 14px
+        }
+
+        nav .brand h3 {
+            margin-top: 8px;
+            color: var(--blue);
+            letter-spacing: 0.6px
+        }
+
+        nav button {
+            width: 100%;
+            text-align: left;
+            padding: 10px 12px;
+            margin: 7px 0;
+            border-radius: 8px;
+            border: 0;
+            background: var(--btn);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all .15s;
+        }
+
+        nav button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .06)
+        }
+
+        section.content {
+            flex: 1;
+            padding: 28px 36px;
+            overflow: auto
+        }
+
+        .card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(25, 25, 25, .03);
+            margin-bottom: 18px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 8px
+        }
+
+        .actions {
+            margin-top: 12px
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 700
+        }
+
+        .result {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #f7f9fc;
+            border: 1px solid #eee;
+            font-weight: 600
+        }
+
+        .logo-block {
+            display: flex;
+            gap: 16px;
+            align-items: center
+        }
+
+        .foto-placeholder {
+            width: 420px;
+            height: 250px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #cfe3ff, #eaf3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-weight: 700;
+            font-size: 18px;
+            border: 1px solid #dfeeff;
+        }
+
+        /* responsive */
+        @media (max-width:900px) {
+            nav {
+                width: 100%;
+                display: flex;
+                overflow: auto;
+                gap: 8px;
+                padding: 12px
+            }
+
+            main {
+                flex-direction: column
+            }
+
+            header {
+                padding: 14px
+            }
+
+            .foto-placeholder {
+                width: 100%;
+                height: 200px
+            }
+        }
+
+        .small {
+            font-size: 13px;
+            color: #555
+        }
+
+        .table-like {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .discount-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="shield">F</div>
+            <div style="text-align:left">
+                <div style="font-size:18px;font-weight:800">Escola First</div>
+                <div style="font-size:12px;opacity:.85">Portal de Exercícios</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="Menu de exercícios">
+            <div class="brand">
+                <!-- inline SVG logo (simple) -->
+                <svg width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="g" x1="0" x2="1">
+                            <stop offset="0" stop-color="#2b61cc" />
+                            <stop offset="1" stop-color="#1e4fa3" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="6" y="8" width="88" height="84" rx="12" fill="url(#g)" />
+                    <text x="50" y="62" font-family="Arial" font-weight="800" font-size="44" text-anchor="middle"
+                        fill="#fff">F</text>
+                </svg>
+                <h3>Escola First</h3>
+                <div class="small">Área de práticas e exercícios</div>
+            </div>
+
+            <!-- Menu buttons -->
+            <button onclick="mostrar('institucional')">Institucional</button>
+
+            <button onclick="mostrar('operacoes')">Soma / Subtração / Multiplicação / Divisão</button>
+            <button onclick="mostrar('media')">Média de 4 notas (0–100)</button>
+            <button onclick="mostrar('retangulo')">Perímetro do Retângulo</button>
+            <button onclick="mostrar('circulo')">Área do Círculo</button>
+            <button onclick="mostrar('nome')">Nome Completo</button>
+            <button onclick="mostrar('maior')">Maior entre 4 números</button>
+            <button onclick="mostrar('menor')">Menor entre 5 números</button>
+            <button onclick="mostrar('tabuada')">Tabuada</button>
+            <button onclick="mostrar('paralelepipedo')">Volume do Paralelepípedo</button>
+            <button onclick="mostrar('esfera')">Volume da Esfera</button>
+            <button onclick="mostrar('idade')">Calcular Idade</button>
+            <button onclick="mostrar('primo')">Verificar Número Primo</button>
+            <button onclick="mostrar('mes')">Mês por número (1–12)</button>
+            <button onclick="mostrar('contracheque')">Contracheque</button>
+        </nav>
+
+        <section class="content" id="conteudo">
+            <!-- INSTITUCIONAL -->
+            <div id="institucional" class="card">
+                <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+                    <div class="logo-block">
+                        <!-- Logo (svg re-used) -->
+                        <svg width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g2" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#2b61cc" />
+                                    <stop offset="1" stop-color="#1e4fa3" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="6" y="8" width="88" height="84" rx="12" fill="url(#g2)" />
+                            <text x="50" y="62" font-family="Arial" font-weight="800" font-size="44"
+                                text-anchor="middle" fill="#fff">F</text>
+                        </svg>
+                    </div>
+
+                    <div style="flex:1">
+                        <h1 style="margin-bottom:6px">Escola First</h1>
+                        <p class="small">Nossa missão é oferecer educação de qualidade com foco no desenvolvimento
+                            integral do aluno: intelectual, social e ético. Prezamos pela formação de cidadãos críticos
+                            e preparados para o futuro.</p>
+                    </div>
+                </div>
+
+                <hr style="margin:18px 0;border:none;border-top:1px solid #eee" />
+
+                <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
+                    <div class="foto-placeholder" aria-hidden="true">Foto Institucional (substituir imagem)</div>
+                    <div style="max-width:520px">
+                        <h2>Institucional</h2>
+                        <p>Na Escola First oferecemos um ambiente seguro e acolhedor, com corpo docente qualificado e
+                            metodologia atualizada. Nossos programas incluem atividades práticas, avaliações formativas
+                            e projetos interdisciplinares para estimular competências essenciais.</p>
+                        <p class="small">Endereço fictício · Telefone (00) 0000-0000 · e-mail: contato@escolafirst.ex
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPERAÇÕES -->
+            <div id="operacoes" class="card" style="display:none">
+                <h2>Operações básicas (2 números)</h2>
+                <div class="grid">
+                    <div>
+                        <label>Número 1</label>
+                        <input id="op_n1" type="number" step="any" placeholder="Ex: 12.5">
+                    </div>
+                    <div>
+                        <label>Número 2</label>
+                        <input id="op_n2" type="number" step="any" placeholder="Ex: 3.2">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn-primary" onclick="calcularOp('somar')">Somar</button>
+                    <button class="btn-primary" onclick="calcularOp('sub')">Subtrair</button>
+                    <button class="btn-primary" onclick="calcularOp('mult')">Multiplicar</button>
+                    <button class="btn-primary" onclick="calcularOp('div')">Dividir</button>
+                </div>
+                <div id="resOp" class="result" aria-live="polite"></div>
+            </div>
+
+            <!-- MEDIA -->
+            <div id="media" class="card" style="display:none">
+                <h2>Média Aritmética de 4 notas (0–100)</h2>
+                <div class="grid">
+                    <div><label>Nota 1</label><input id="nota_1" type="number" min="0" max="100"></div>
+                    <div><label>Nota 2</label><input id="nota_2" type="number" min="0" max="100"></div>
+                    <div><label>Nota 3</label><input id="nota_3" type="number" min="0" max="100"></div>
+                    <div><label>Nota 4</label><input id="nota_4" type="number" min="0" max="100"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="calcularMedia()">Calcular Média</button></div>
+                <div id="resMedia" class="result"></div>
+            </div>
+
+            <!-- RETÂNGULO -->
+            <div id="retangulo" class="card" style="display:none">
+                <h2>Perímetro de um Retângulo</h2>
+                <div class="grid">
+                    <div><label>Base</label><input id="ret_base" type="number" step="any"></div>
+                    <div><label>Altura</label><input id="ret_alt" type="number" step="any"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="calcularPerimetro()">Calcular
+                        Perímetro</button></div>
+                <div id="resRet" class="result"></div>
+            </div>
+
+            <!-- CÍRCULO -->
+            <div id="circulo" class="card" style="display:none">
+                <h2>Área do Círculo</h2>
+                <label>Raio</label><input id="cir_raio" type="number" step="any">
+                <div class="actions"><button class="btn-primary" onclick="calcularAreaCirculo()">Calcular Área</button>
+                </div>
+                <div id="resCir" class="result"></div>
+            </div>
+
+            <!-- NOME COMPLETO -->
+            <div id="nome" class="card" style="display:none">
+                <h2>Nome Completo</h2>
+                <div class="grid">
+                    <div><label>Nome</label><input id="nome_prim" type="text"></div>
+                    <div><label>Sobrenome</label><input id="nome_sob" type="text"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="mostrarNomeCompleto()">Mostrar Nome
+                        Completo</button></div>
+                <div id="resNome" class="result"></div>
+            </div>
+
+            <!-- MAIOR entre 4 -->
+            <div id="maior" class="card" style="display:none">
+                <h2>Maior entre 4 números</h2>
+                <div class="grid">
+                    <div><label>Número 1</label><input id="M1" type="number"></div>
+                    <div><label>Número 2</label><input id="M2" type="number"></div>
+                    <div><label>Número 3</label><input id="M3" type="number"></div>
+                    <div><label>Número 4</label><input id="M4" type="number"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="maiorEntre4()">Verificar Maior</button></div>
+                <div id="resMaior" class="result"></div>
+            </div>
+
+            <!-- MENOR entre 5 -->
+            <div id="menor" class="card" style="display:none">
+                <h2>Menor entre 5 números</h2>
+                <div class="grid">
+                    <div><label>1</label><input id="m1" type="number"></div>
+                    <div><label>2</label><input id="m2" type="number"></div>
+                    <div><label>3</label><input id="m3" type="number"></div>
+                    <div><label>4</label><input id="m4" type="number"></div>
+                    <div><label>5</label><input id="m5" type="number"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="menorEntre5()">Verificar Menor</button></div>
+                <div id="resMenor" class="result"></div>
+            </div>
+
+            <!-- TABUADA -->
+            <div id="tabuada" class="card" style="display:none">
+                <h2>Tabuada</h2>
+                <label>Número inteiro</label><input id="tab_num" type="number" step="1">
+                <div class="actions"><button class="btn-primary" onclick="gerarTabuada()">Gerar Tabuada (1 a
+                        10)</button></div>
+                <div id="resTabuada" class="result" style="white-space:pre-line"></div>
+            </div>
+
+            <!-- PARALELEPIPEDO -->
+            <div id="paralelepipedo" class="card" style="display:none">
+                <h2>Volume do Paralelepípedo</h2>
+                <div class="grid">
+                    <div><label>Comprimento</label><input id="par_c" type="number" step="any"></div>
+                    <div><label>Largura</label><input id="par_l" type="number" step="any"></div>
+                    <div><label>Altura</label><input id="par_a" type="number" step="any"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="volumeParalelepipedo()">Calcular
+                        Volume</button></div>
+                <div id="resPar" class="result"></div>
+            </div>
+
+            <!-- ESFERA -->
+            <div id="esfera" class="card" style="display:none">
+                <h2>Volume da Esfera</h2>
+                <label>Raio</label><input id="esf_raio" type="number" step="any">
+                <div class="actions"><button class="btn-primary" onclick="volumeEsfera()">Calcular Volume</button></div>
+                <div id="resEsf" class="result"></div>
+            </div>
+
+            <!-- IDADE -->
+            <div id="idade" class="card" style="display:none">
+                <h2>Calcular Idade</h2>
+                <p class="small">Digite data de nascimento e data atual (se quiser usar a data de hoje, deixe em branco
+                    e pressione Calcular).</p>
+                <div class="grid">
+                    <div><label>Data de Nascimento</label><input id="birth" type="date"></div>
+                    <div><label>Data Atual (opcional)</label><input id="today" type="date"></div>
+                </div>
+                <div class="actions"><button class="btn-primary" onclick="calcularIdade()">Calcular Idade</button></div>
+                <div id="resIdade" class="result"></div>
+            </div>
+
+            <!-- PRIMO -->
+            <div id="primo" class="card" style="display:none">
+                <h2>Verificar Número Primo</h2>
+                <label>Número inteiro (>=0)</label><input id="numPrimo" type="number" step="1" min="0">
+                <div class="actions"><button class="btn-primary" onclick="verificarPrimo()">Verificar</button></div>
+                <div id="resPrimo" class="result"></div>
+            </div>
+
+            <!-- MÊS -->
+            <div id="mes" class="card" style="display:none">
+                <h2>Nome do mês (1–12)</h2>
+                <label>Número do mês</label><input id="numMes" type="number" min="1" max="12" step="1">
+                <div class="actions"><button class="btn-primary" onclick="mostrarMes()">Mostrar Mês</button></div>
+                <div id="resMes" class="result"></div>
+            </div>
+
+            <!-- CONTRACHEQUE -->
+            <div id="contracheque" class="card" style="display:none">
+                <h2>Contracheque (descontos)</h2>
+                <label>Salário bruto</label><input id="salarioBruto" type="number" step="any" placeholder="Ex: 2500.00">
+                <div class="small" style="margin-top:8px">Descontos aplicados: INSS 4% • Salário família 1,5% • Vale
+                    transporte 3% • FGTS 2,5%</div>
+                <div class="actions"><button class="btn-primary" onclick="calcularContraCheque()">Calcular</button>
+                </div>
+
+                <div id="resContra" class="result"></div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // função para mostrar a seção correta
+        function mostrar(id) {
+            // esconder todas as cards internas
+            document.querySelectorAll('#conteudo > .card, #conteudo > div.card').forEach(el => el.style.display = 'none');
+            // exibir a solicitada
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'block';
+            // rolar para topo do conteúdo
+            document.getElementById('conteudo').scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // UTIL: leitura segura de número
+        function num(id) { const v = document.getElementById(id).value; return v === '' ? NaN : Number(v); }
+        function txt(id) { return document.getElementById(id).value.trim(); }
+
+        // 1. operações
+        function calcularOp(op) {
+            const a = num('op_n1'), b = num('op_n2');
+            const out = document.getElementById('resOp');
+            if (isNaN(a) || isNaN(b)) { out.innerText = 'Digite ambos os números.'; return; }
+            let r;
+            if (op === 'somar') r = a + b;
+            if (op === 'sub') r = a - b;
+            if (op === 'mult') r = a * b;
+            if (op === 'div') {
+                if (b === 0) { out.innerText = 'Erro: divisão por zero.'; return; }
+                r = a / b;
+            }
+            out.innerText = `Resultado: ${r}`;
+        }
+
+        // 2. média de notas 0-100
+        function calcularMedia() {
+            const n1 = num('nota_1'), n2 = num('nota_2'), n3 = num('nota_3'), n4 = num('nota_4');
+            const out = document.getElementById('resMedia');
+            const arr = [n1, n2, n3, n4];
+            if (arr.some(x => isNaN(x))) { out.innerText = 'Preencha todas as notas.'; return; }
+            if (arr.some(x => x < 0 || x > 100)) { out.innerText = 'Notas devem estar entre 0 e 100.'; return; }
+            const media = (n1 + n2 + n3 + n4) / 4;
+            let situacao = '';
+            if (media >= 70) situacao = 'Aprovado ✅';
+            else if (media < 40) situacao = 'Reprovado ❌';
+            else situacao = 'Recuperação ⚠️';
+            out.innerText = `Média: ${media.toFixed(2)} → ${situacao}`;
+        }
+
+        // 3. perimetro retângulo
+        function calcularPerimetro() {
+            const b = num('ret_base'), h = num('ret_alt');
+            const out = document.getElementById('resRet');
+            if (isNaN(b) || isNaN(h)) { out.innerText = 'Preencha base e altura.'; return; }
+            out.innerText = `Perímetro: ${2 * (b + h)}`;
+        }
+
+        // 4. área círculo
+        function calcularAreaCirculo() {
+            const r = num('cir_raio'); const out = document.getElementById('resCir');
+            if (isNaN(r) || r < 0) { out.innerText = 'Raio inválido.'; return; }
+            out.innerText = `Área: ${(Math.PI * r * r).toFixed(2)}`;
+        }
+
+        // 5. nome completo
+        function mostrarNomeCompleto() {
+            const n = txt('nome_prim'), s = txt('nome_sob'); const out = document.getElementById('resNome');
+            if (!n && !s) { out.innerText = 'Preencha nome e sobrenome.'; return; }
+            out.innerText = `Nome completo: ${(n + ' ' + s).trim()}`;
+        }
+
+        // 6. maior entre 4
+        function maiorEntre4() {
+            const arr = [num('M1'), num('M2'), num('M3'), num('M4')];
+            const out = document.getElementById('resMaior');
+            if (arr.some(x => isNaN(x))) { out.innerText = 'Preencha os 4 números.'; return; }
+            out.innerText = `Maior número: ${Math.max(...arr)}`;
+        }
+
+        // 7. menor entre 5
+        function menorEntre5() {
+            const arr = [num('m1'), num('m2'), num('m3'), num('m4'), num('m5')];
+            const out = document.getElementById('resMenor');
+            if (arr.some(x => isNaN(x))) { out.innerText = 'Preencha os 5 números.'; return; }
+            out.innerText = `Menor número: ${Math.min(...arr)}`;
+        }
+
+        // 8. tabuada (1..10)
+        function gerarTabuada() {
+            const n = num('tab_num'); const out = document.getElementById('resTabuada');
+            if (!Number.isInteger(n) || isNaN(n)) { out.innerText = 'Digite um número inteiro.'; return; }
+            let lines = [];
+            for (let i = 1; i <= 10; i++) {
+                lines.push(`${n} x ${i} = ${n * i}`);
+            }
+            out.innerText = lines.join('\n');
+        }
+
+        // 9. volume paralelepípedo
+        function volumeParalelepipedo() {
+            const c = num('par_c'), l = num('par_l'), a = num('par_a'); const out = document.getElementById('resPar');
+            if ([c, l, a].some(x => isNaN(x))) { out.innerText = 'Preencha comprimento, largura e altura.'; return; }
+            out.innerText = `Volume: ${(c * l * a).toFixed(3)}`;
+        }
+
+        // 10. volume esfera
+        function volumeEsfera() {
+            const r = num('esf_raio'); const out = document.getElementById('resEsf');
+            if (isNaN(r) || r < 0) { out.innerText = 'Raio inválido.'; return; }
+            const v = (4 / 3) * Math.PI * Math.pow(r, 3);
+            out.innerText = `Volume da esfera: ${v.toFixed(3)}`;
+        }
+
+        // 11. idade (data nascimento e data atual)
+        function calcularIdade() {
+            const birthVal = document.getElementById('birth').value;
+            const todayVal = document.getElementById('today').value;
+            const out = document.getElementById('resIdade');
+            if (!birthVal) { out.innerText = 'Digite a data de nascimento.'; return; }
+            const birth = new Date(birthVal);
+            const today = todayVal ? new Date(todayVal) : new Date();
+            if (isNaN(birth.getTime()) || isNaN(today.getTime())) { out.innerText = 'Datas inválidas.'; return; }
+            if (birth > today) { out.innerText = 'Data de nascimento não pode ser posterior à data atual.'; return; }
+            // calcular anos completos
+            let anos = today.getFullYear() - birth.getFullYear();
+            const mDiff = today.getMonth() - birth.getMonth();
+            const dDiff = today.getDate() - birth.getDate();
+            if (mDiff < 0 || (mDiff === 0 && dDiff < 0)) anos--;
+            out.innerText = `Idade: ${anos} anos`;
+        }
+
+        // 12. primo
+        function verificarPrimo() {
+            const n = num('numPrimo'); const out = document.getElementById('resPrimo');
+            if (!Number.isInteger(n) || isNaN(n) || n < 0) { out.innerText = 'Digite um inteiro >= 0.'; return; }
+            if (n < 2) { out.innerText = `${n} não é primo.`; return; }
+            // teste simples até sqrt(n)
+            const lim = Math.floor(Math.sqrt(n));
+            for (let i = 2; i <= lim; i++) {
+                if (n % i === 0) { out.innerText = `${n} não é primo (divisível por ${i}).`; return; }
+            }
+            out.innerText = `${n} é primo ✅`;
+        }
+
+        // 13. mês por número
+        function mostrarMes() {
+            const idx = parseInt(document.getElementById('numMes').value, 10);
+            const out = document.getElementById('resMes');
+            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            if (isNaN(idx) || idx < 1 || idx > 12) { out.innerText = 'Digite um número entre 1 e 12.'; return; }
+            out.innerText = `Mês: ${meses[idx - 1]}`;
+        }
+
+        // 14. contracheque (descontos percentuais especificados)
+        function calcularContraCheque() {
+            const bruto = num('salarioBruto'); const out = document.getElementById('resContra');
+            if (isNaN(bruto) || bruto < 0) { out.innerText = 'Digite um salário bruto válido.'; return; }
+            // percentuais conforme solicitado
+            const inss = 0.04 * bruto;       // 4%
+            const salFamilia = 0.015 * bruto; // 1.5%
+            const vt = 0.03 * bruto;         // 3%
+            const fgts = 0.025 * bruto;      // 2.5%
+            const totalDescontos = inss + salFamilia + vt + fgts;
+            const liquido = bruto - totalDescontos;
+            out.innerHTML = `
+      Salário bruto: R$ ${bruto.toFixed(2)}\n
+      Descontos:
+      INSS (4%): R$ ${inss.toFixed(2)}
+      Salário Família (1.5%): R$ ${salFamilia.toFixed(2)}
+      Vale Transporte (3%): R$ ${vt.toFixed(2)}
+      FGTS (2.5%): R$ ${fgts.toFixed(2)}
+      ----------------------------
+      Total descontos: R$ ${totalDescontos.toFixed(2)}
+      <div style="margin-top:8px;font-weight:800">Salário líquido: R$ ${liquido.toFixed(2)}</div>
+    `.replace(/\n/g, '<br>');
+        }
+
+        // Ao carregar a página, mostrar institucional por padrão
+        document.addEventListener('DOMContentLoaded', () => mostrar('institucional'));
+    </script>
+
+</body>
+
+</html>

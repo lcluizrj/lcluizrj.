@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="ivalor1"> 1° valor:</label>
+        <input type="text" name="valor1" id="ivalor1">
+        <br>
+        <label for="ivalor2">2° valor:</label>
+        <input type="text" name=valor2 id="ivalor2"><br>
+        <button onclick="somar()"> Somar</button>
+        <button onclick="subtrair()"> subtrair</button>
+        <button onclick="multiplicar()"> multiplicar</button>
+        <button onclick="dividir()"> dividir</button>
+        <br><br>
+        <label for=""> Resultado:</label>
+        <input type="text" name=result id="iresult">
+
+
+    </div>
+    <script>
+        function somar() {
+            let valor1 = document.getElementById("ivalor1").value;
+            let valor2 = document.getElementById("ivalor2").value;
+            let resultado = parseInt(valor1) + parseInt(valor2);
+            document.getElementById("iresult").value = resultado;
+        }
+        function subtrair() {
+            let valor1 = document.getElementById("ivalor1").value;
+            let valor2 = document.getElementById("ivalor2").value;
+            let resultado = parseInt(valor1) - parseInt(valor2);
+            document.getElementById("iresult").value = resultado;
+        }
+        function multiplicar() {
+            let valor1 = document.getElementById("ivalor1").value;
+            let valor2 = document.getElementById("ivalor2").value;
+            let resultado = parseInt(valor1) * parseInt(valor2);
+            document.getElementById("iresult").value = resultado;
+        }
+        function dividir() {
+            let valor1 = document.getElementById("ivalor1").value;
+            let valor2 = document.getElementById("ivalor2").value;
+            let resultado = parseInt(valor1) / parseInt(valor2);
+            document.getElementById("iresult").value = resultado;
+        }
+        
+    </script>
+</body>
+
+</html>

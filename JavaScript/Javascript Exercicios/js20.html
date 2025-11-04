@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div {
+            border: 2px solid black;
+            width: 174px;
+            height: 210px;
+        }
+
+        button {
+            width: 40px;
+            height: 30px;
+        }
+
+        input {
+            height: 50px;
+            width: 165px;
+            text-align: right;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="visor" id="ivisor" readonly><br>
+        <button onclick="limparCE()">CE</button>
+        <button onclick="limparC()">C</button>
+        <button onclick="off()">OFF</button>
+        <button onclick="on()">ON</button><br>
+
+        <button onclick="mostrar7()">7</button>
+        <button onclick="mostrar8()">8</button>
+        <button onclick="mostrar9()">9</button>
+        <button onclick="operacao('+')">+</button><br>
+
+        <button onclick="mostrar4()">4</button>
+        <button onclick="mostrar5()">5</button>
+        <button onclick="mostrar6()">6</button>
+        <button onclick="operacao('-')">-</button><br>
+
+        <button onclick="mostrar1()">1</button>
+        <button onclick="mostrar2()">2</button>
+        <button onclick="mostrar3()">3</button>
+        <button onclick="operacao('/')">/</button><br>
+
+        <button onclick="mostrar0()">0</button>
+        <button onclick="mostrarPonto()">.</button>
+        <button onclick="operacao('*')">*</button>
+        <button onclick="calcular()">=</button>
+    </div>
+
+    <script>
+        let ligado = true; // controla o estado ON/OFF
+        let expressao = "";
+
+        // Funções para mostrar números no visor
+        function mostrar0() { adicionar('0'); }
+        function mostrar1() { adicionar('1'); }
+        function mostrar2() { adicionar('2'); }
+        function mostrar3() { adicionar('3'); }
+        function mostrar4() { adicionar('4'); }
+        function mostrar5() { adicionar('5'); }
+        function mostrar6() { adicionar('6'); }
+        function mostrar7() { adicionar('7'); }
+        function mostrar8() { adicionar('8'); }
+        function mostrar9() { adicionar('9'); }
+
+        function mostrarPonto() { adicionar('.'); }
+
+        // Função genérica pra adicionar texto no visor
+        function adicionar(valor) {
+            if (ligado) {
+                document.getElementById("ivisor").value += valor;
+                expressao += valor;
+            }
+        }
+
+        // Função para adicionar operações
+        function operacao(op) {
+            if (ligado) {
+                document.getElementById("ivisor").value += op;
+                expressao += op;
+            }
+        }
+
+        // Função para calcular
+        function calcular() {
+            if (ligado) {
+                try {
+                    let resultado = eval(expressao);
+                    document.getElementById("ivisor").value = resultado;
+                    expressao = resultado.toString();
+                } catch {
+                    document.getElementById("ivisor").value = "Erro";
+                    expressao = "";
+                }
+            }
+        }
+
+        // Limpa último dígito (CE)
+        function limparCE() {
+            if (ligado) {
+                expressao = expressao.slice(0, -1);
+                document.getElementById("ivisor").value = expressao;
+            }
+        }
+
+        // Limpa tudo (C)
+        function limparC() {
+            if (ligado) {
+                expressao = "";
+                document.getElementById("ivisor").value = "";
+            }
+        }
+
+        // Liga e desliga calculadora
+        function off() {
+            ligado = false;
+            document.getElementById("ivisor").value = "";
+        }
+
+        function on() {
+            ligado = true;
+            expressao = "";
+            document.getElementById("ivisor").value = "";
+        }
+    </script>
+</body>
+
+</html>

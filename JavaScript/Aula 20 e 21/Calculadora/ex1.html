@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body>div {
+            width: 187px;
+            height: 235px;
+            border: solid black;
+            background-color: azure;
+        }
+
+        input {
+            width: 177px;
+            height: 50px;
+            margin-left: 1px;
+            text-align: right;
+            font-size: 30px;
+            border: 2px solid rgb(7, 6, 6);
+            background-color: cadetblue;
+        }
+
+        button {
+            height: 30px;
+            width: 40px;
+            margin-left: 3px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="ivisor" />
+        <br />
+        <button onclick="ce()">CE</button>
+        <button onclick="c()">C</button>
+        <button onclick="off()">OFF</button>
+        <button onclick="on()">ON</button>
+        <br />
+        <button onclick="preencher('7')">7</button>
+        <button onclick="preencher('8')">8</button>
+        <button onclick="preencher('9')">9</button>
+        <button onclick="sinal('+')">+</button>
+        <br />
+        <button onclick="preencher('4')">4</button>
+        <button onclick="preencher('5')">5</button>
+        <button onclick="preencher('6')">6</button>
+        <button onclick="sinal('-')">-</button>
+        <br />
+        <button onclick="preencher('1')">1</button>
+        <button onclick='preencher("2")'>2</button>
+        <button onclick="preencher('3')">3</button>
+        <button onclick="sinal('/')">/</button>
+        <br />
+        <button onclick="preencher('0')">0</button>
+        <button onclick="preencher('.')">.</button>
+        <button onclick="sinal('*')">*</button>
+        <button onclick="sinalResultado()">=</button>
+        <br />
+    </div>
+
+    <script>
+
+        // declarando variavel globais
+        var valor1;
+        var operador;
+        var valor2;
+
+        var ligado = false;
+        function ce() {
+            let visor = document.getElementById("ivisor");
+            let contador = visor.value;
+            let nova = "";
+            for (let i = 0; i < contador.length - 1; i++) {
+                nova = nova + contador[i];
+            }
+            visor.value = nova;
+        }
+        function c() {
+            document.getElementById("ivisor").value = "0";
+        }
+
+
+        function off() {
+            document.getElementById("ivisor").value = "";
+            ligado = false;
+            document.getElementById("ivisor").style.background = "cadetblue";
+        }
+
+        function on() {
+            document.getElementById("ivisor").value = "0";
+            ligado = true;
+            document.getElementById("ivisor").style.background = "white";
+        }
+
+
+        function preencher(valor) {
+
+            var visor = document.getElementById("ivisor").value;
+
+            if (visor == "0") {
+                document.getElementById("ivisor").value = valor;
+            } else {
+                var concatenado = visor + valor;
+                document.getElementById("ivisor").value = concatenado;
+            }
+
+        }
+
+        // função sinal + com o uso do console.log para verificarf o conteudo e o tipo dos dados
+        // função generica de sinal com passagem de argumento
+        function sinal(sinal) {
+            if (ligado) {
+
+                valor1 = document.getElementById("ivisor").value;
+                operador = sinal;
+                document.getElementById("ivisor").value = "0";
+            }
+            console.log(valor1);
+            console.log(typeof (valor1));
+            console.log(operador);
+        }
+
+
+        function sinalResultado() {
+            valor2 = document.getElementById("ivisor").value;
+
+            switch (operador) {
+                case "+": {
+                    var resultado = Number(valor1) + Number(valor2);
+                    document.getElementById("ivisor").value = resultado;
+                    break;
+
+                }
+                case "-": {
+                    var resultado = valor1 - valor2;
+                    document.getElementById("ivisor").value = resultado;
+                    break;
+
+                }
+                case "*": {
+                    var resultado = valor1 * valor2;
+                    document.getElementById("ivisor").value = resultado;
+                    break;
+
+                }
+                case "/": {
+                    var resultado = valor1 / valor2;
+                    document.getElementById("ivisor").value = resultado;
+                    break;
+
+                }
+                default:
+                    document.getElementById("ivisor").value = "ERRO";
+            }
+
+
+        }
+
+
+
+        // função generica de preencher, considerando se esta ligado ou não a calculadora
+        function preencherPadrao(valor) {
+
+            if (ligado) {
+                var visor = document.getElementById("ivisor").value;
+
+                if (visor == "0") {
+                    document.getElementById("ivisor").value = valor;
+                } else {
+                    var concatenado = visor + valor;
+                    document.getElementById("ivisor").value = concatenado;
+                }
+
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

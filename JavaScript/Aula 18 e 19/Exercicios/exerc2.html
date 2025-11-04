@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora sem eval</title>
+    <style>
+        body>div {
+            border: solid black;
+            height: 235px;
+            width: 187px;
+        }
+
+        input {
+            border: solid black;
+            height: 50px;
+            width: 177px;
+            text-align: right;
+            font-size: 30px;
+        }
+
+        button {
+            height: 30px;
+            width: 40px;
+            margin-left: 3px;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="visor" id="ivisor">
+
+        <button onclick="ce()">CE</button>
+        <button onclick="c()">C</button>
+        <button onclick="on()">ON</button>
+        <button onclick="off()">OFF</button>
+        <br>
+        <button onclick="mostrar('7')">7</button>
+        <button onclick="mostrar('8')">8</button>
+        <button onclick="mostrar('9')">9</button>
+        <button onclick="mostrar('+')">+</button>
+        <br>
+        <button onclick="mostrar('4')">4</button>
+        <button onclick="mostrar('5')">5</button>
+        <button onclick="mostrar('6')">6</button>
+        <button onclick="mostrar('-')">-</button>
+        <br>
+        <button onclick="mostrar('1')">1</button>
+        <button onclick="mostrar('2')">2</button>
+        <button onclick="mostrar('3')">3</button>
+        <button onclick="mostrar('*')">*</button>
+        <br>
+        <button onclick="ponto()">.</button>
+        <button onclick="mostrar('0')">0</button>
+        <button onclick="mostrar('/')">/</button>
+        <button onclick="calcular()">=</button>
+    </div>
+
+    <script>
+        function mostrar(valor) {
+            let visor = document.getElementById("ivisor").value;
+            if (visor == "0" && valor != ".") {
+                document.getElementById("ivisor").value = valor;
+            } else {
+                document.getElementById("ivisor").value = visor + valor;
+            }
+        }
+
+        function on() {
+            document.getElementById("ivisor").value = "0";
+        }
+
+        function off() {
+            document.getElementById("ivisor").value = "";
+        }
+
+        function ponto() {
+            let visor = document.getElementById("ivisor").value;
+            let ultimo = visor[visor.length - 1];
+            if (ultimo != ".") {
+                document.getElementById("ivisor").value = visor + ".";
+            }
+        }
+
+        function c() {
+            document.getElementById("ivisor").value = "0";
+        }
+
+        function ce() {
+            let visor = document.getElementById("ivisor");
+            let texto = visor.value;
+            let novoTexto = "";
+            for (let i = 0; i < texto.length - 1; i++) {
+                novoTexto = novoTexto + texto[i];
+            }
+            visor.value = novoTexto;
+        }
+
+        // ----------- CALCULAR SEM USAR EVAL -----------------
+        function calcular() {
+            let visor = document.getElementById("ivisor");
+            let expressao = visor.value;
+
+            // Remove espaços
+            expressao = expressao.replace(/\s+/g, "");
+
+            // Se tiver caractere estranho, erro
+            if (!/^[0-9+\-*/.]+$/.test(expressao)) {
+                visor.value = "Erro";
+                return;
+            }
+
+            let tokens = [];
+            let num = "";
+
+            // Quebra expressão em números e operadores
+            for (let i = 0; i < expressao.length; i++) {
+                let ch = expressao[i];
+                if ((ch >= "0" && ch <= "9") || ch == ".") {
+                    num = num + ch;
+                } else {
+                    if (num != "") {
+                        tokens.push(num);
+                        num = "";
+                    }
+                    // trata sinal negativo no início ou após operador
+                    if (ch == "-" && (tokens.length == 0 || "+-*/".includes(tokens[tokens.length - 1]))) {
+                        num = "-";
+                    } else {
+                        tokens.push(ch);
+                    }
+                }
+            }
+            if (num != "") tokens.push(num);
+
+            // PRIMEIRO: resolve * e /
+            let stack = [];
+            let i = 0;
+            while (i < tokens.length) {
+                let t = tokens[i];
+                if (t == "*" || t == "/") {
+                    let a = parseFloat(stack.pop());
+                    let b = parseFloat(tokens[i + 1]);
+                    if (isNaN(b)) {
+                        visor.value = "Erro";
+                        return;
+                    }
+                    let r;
+                    if (t == "*") r = a * b;
+                    else {
+                        if (b == 0) {
+                            visor.value = "Erro";
+                            return;
+                        }
+                        r = a / b;
+                    }
+                    stack.push(String(r));
+                    i = i + 2;
+                } else {
+                    stack.push(t);
+                    i++;
+                }
+            }
+
+            // SEGUNDO: resolve + e -
+            let resultado = parseFloat(stack[0]);
+            i = 1;
+            while (i < stack.length) {
+                let op = stack[i];
+                let n2 = parseFloat(stack[i + 1]);
+                if (op == "+") resultado = resultado + n2;
+                else if (op == "-") resultado = resultado - n2;
+                i = i + 2;
+            }
+
+            visor.value = resultado;
+        }
+    </script>
+</body>
+
+</html>
