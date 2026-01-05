@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    gap:10px;
+     
+}
+.div1 {
+    display: inline;
+    border: 1px solid black;
+    
+}
+.div2 {
+    display: inline;
+    border: 1px solid black;
+}
+.div3 {
+    display: inline;
+    border: 1px solid black;
+}

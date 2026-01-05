@@ -45,14 +45,14 @@
 
 
         section {
-            border: solid #0b2f6b;
+            border: solid #afafaf;
             display: flex;
             flex: 1;
             /* ocupa o espaço restante automaticamente */
         }
 
         nav {
-            border: solid #0b2f6b;
+            border: solid #afafaf;
             width: 15%;
             height: 100%;
             background-color: #e0e0e0;
@@ -143,7 +143,8 @@
         
         }
         .ibuttontela {
-           width: 20%;
+           width: 29%;
+           height: 25px;
 
         }
         #ifoto {
@@ -151,6 +152,17 @@
             text-align: center  ;
             display: block;
             margin: 0 auto;
+        }
+        .divborda {
+            border: solid rgb(191, 192, 194);
+            border-radius: 10px;
+            width: 40%;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            margin-left: 300px;
+            background: rgb(191, 192, 194);
+           
         }
     </style>
 </head>
@@ -500,7 +512,7 @@
 
             if (pagina === "operacoes") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3> Operações Basicas </h3>
                 <label for="ivalor1">1° valor:</label>
                 <input type="number" id="ivalor1" ><br>
@@ -520,7 +532,7 @@
 
             else if (pagina === "media") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Média de 4 Notas</h3>
                 <input type="number" id="n1" placeholder="Nota 1"><br>
                 <input type="number" id="n2" placeholder="Nota 2"><br>
@@ -535,7 +547,7 @@
 
             else if (pagina === "retangulo") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Perimetro do Retangulo</h3>
                 <label for="base">Largura:</label>
                 <input type="number" id="largura"><br>
@@ -548,24 +560,24 @@
             }
             else if (pagina === "circulo") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3> Área do Circulo </h3>
                 <label for="icirculo"> Raio Circulo:</label> 
                 <input type = "number" id = icirculo><br><br>
-                <button onclick="calcularAreaCirculo()" class="ibuttontela"> Calcular Raio </button><br>
+                <button onclick="calcularAreaCirculo()" class="ibuttontela"> Calcular Raio </button><br><br>
                 <label> Raio:</label>
                 <input type ="text" id="iresultadoraio" readonly>
             </div>`;
             }
             else if (pagina === "nome") {
                 main.innerHTML = ` 
-            <div> <br>
+            <div class=divborda> <br>
                 <h3> Imprima seu nome </h3>
                 <label  for="">Nome:</label>
                 <input  type="text" id="iname"><br><br>
                 <label  for="" >Sobrenome:</label>
                 <input  type="text" id="isobrenome"><br><br>
-                <button onclick="nome()" class="ibuttontela">Seu nome completo é.</button>
+                <button onclick="nome()" class="ibuttontela"> Imprima seu nome</button>
                 <p id="resultado"></p>
                 
                 
@@ -576,14 +588,14 @@
             }
             else if (pagina === "maior") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Maior Entre 4 Números</h3>
                 <input type="number" value="" id="im1" placeholder="Digite Primeiro Numero"><br>
                 <input type="number" value="" id="im2" placeholder="Digite Segundo Numero"><br>
                 <input type="number" value="" id="im3" placeholder="Digite Terceiro Numero"><br>
-                <input type="number" value="" id="im4" placeholder="Digite Quarto Numero"><br>
+                <input type="number" value="" id="im4" placeholder="Digite Quarto Numero"><br><br>
                 
-                <button onclick="maior()" class="ibuttontela"> Clique aqui. </button><br>
+                <button onclick="maior()" class="ibuttontela"> Clique aqui. </button><br><br>
                 <label for="">Resultado:
                 </label>
                 <input type="number" id="iresultado">
@@ -592,15 +604,15 @@
             }
             else if (pagina === "menor") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Menor Entre 5 Números</h3>
                 <input type="number" value="" id="imenor1" placeholder="Digite Primeiro Numero"><br>
                 <input type="number" value="" id="imenor2" placeholder="Digite Segundo Numero"><br>
                 <input type="number" value="" id="imenor3" placeholder="Digite Terceiro Numero"><br>
                 <input type="number" value="" id="imenor4" placeholder="Digite Quarto Numero"><br>
-                <input type="number" value="" id="imenor5" placeholder="Digite Quinto Numero"><br>
+                <input type="number" value="" id="imenor5" placeholder="Digite Quinto Numero"><br><br>
                 
-                <button onclick="menor()" class="ibuttontela"> Clique aqui. </button><br>
+                <button onclick="menor()" class="ibuttontela"> Clique aqui. </button><br><br>
                 <label for="">Resultado:
                 </label>
                 <input type="number" id="iresultado">
@@ -608,12 +620,13 @@
 
             }
             else if (pagina === "tabuada") {
-                main.innerHTML = `<div>
+                main.innerHTML = `
+            <div class=divborda>
                 <br>
                 <h3> Tabuada Multiplicação</h3><br>
                 <Label>Digite o valor:</Label>
                 <input type="number" id="itabuada"><br><br>
-                <button onclick="tabuada()" class="ibuttontela">Clique para multiplicar</button><br>
+                <button onclick="tabuada()" class="ibuttontela">Imprimir Tabuada</button><br>
                 <p id="iresultado"></p>
 
             </div>`;
@@ -621,7 +634,7 @@
             }
             else if (pagina === "calcularParalelepipedo") {
                 main.innerHTML = `
-            <div> <br>
+            <div class=divborda> <br>
                 <h3>Volume do Paralelepípedo</h3>
                 <label for="icomp">Comprimento:</label>
                 <input type="number" id="icomp" ><br>
@@ -638,7 +651,7 @@
             }
             else if (pagina === "esfera") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Volume da Esfera</h3>
                 <label for="iraio">Raio:</label>
                 <input type="number" id="iraio" step="any"><br><br>
@@ -650,7 +663,7 @@
             }
             else if (pagina === "idade") {
                 main.innerHTML = ` 
-            <div>
+            <div class=divborda>
                 <h3>Calcular Idade</h3>
                 <label>Dia de nascimento:</label><br>
                 <input type="number" id="idiaNasc"><br><br>
@@ -677,7 +690,7 @@
             }
             else if (pagina === "primo") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Verificar se o número é primo</h3>
  
                 <label>Digite um número inteiro:</label><br>
@@ -691,7 +704,7 @@
 
             else if (pagina === "mes") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Mês por número (1 a 12)</h3>
 
                 <label>Digite um número de 1 a 12:</label><br>
@@ -705,7 +718,7 @@
 
             else if (pagina === "contracheque") {
                 main.innerHTML = `
-            <div>
+            <div class=divborda>
                 <h3>Calcular Contracheque</h3>
 
                 <label>Digite o salário bruto (R$):</label><br>

@@ -1,0 +1,172 @@
+.imagem {
+    width: 200px;
+    height: 200px;
+}
+
+.fotos {
+    width: 200px;
+    height: 200px;
+}
+
+
+@media screen and (orientation: portrait) {
+    .imagem {
+        border: solid 5px green;
+        display: block;
+        margin: 0 auto;
+
+    }
+
+
+}
+
+@media screen and (orientation: landscape) {
+    .imagem {
+        border: solid 5px rgb(255, 218, 8);
+        display: inline-block;
+
+    }
+
+    #corpo {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .imagem {
+        border: solid red 5px;
+        display: block;
+
+
+
+    }
+
+    #corpo {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width:320px) {
+
+
+
+    .tabuleiro {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .quadrado {
+        width: 37.5px;
+        height: 37.5px;
+
+    }
+
+    .verde {
+        background-color: green;
+
+    }
+
+    .branco {
+        background-color: white;
+
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:321px) and (max-width:800px) {
+
+
+
+    .tabuleiro {
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    .quadrado {
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .verde {
+        background-color: rgb(71, 243, 65);
+
+    }
+
+    .branco {
+        background-color: rgb(0, 60, 255);
+
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width:1920px) {
+
+
+
+    .tabuleiro {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    .quadrado {
+        width: 62.5px;
+        height: 62.5px;
+
+    }
+
+    .verde {
+        background-color: rgb(255, 5, 5);
+
+    }
+
+    .branco {
+        background-color: rgb(0, 0, 0);
+
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and ( orientation: landscape) {
+    .tela {
+        display: inline-block;
+    }
+}
+@media screen and ( orientation: portrait) {
+    .tela {
+        display: block;
+    }
+}

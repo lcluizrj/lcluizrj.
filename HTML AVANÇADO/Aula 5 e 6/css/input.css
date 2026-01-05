@@ -1,0 +1,12 @@
+
+
+.container {
+    display: flex;
+}
+
+.container>label {
+display: inline-block;
+}
+.container>input {
+    display: block;
+}

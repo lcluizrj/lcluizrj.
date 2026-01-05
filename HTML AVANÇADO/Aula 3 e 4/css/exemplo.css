@@ -1,0 +1,41 @@
+@media screen and (orientation:landscape) {
+    img {
+        border: solid black;
+    }
+
+    .galeria {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    img {
+        border: solid red;
+
+    }
+
+    .galeria {
+        display: block;
+        gap: 10px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        img {
+            border: solid green;
+        }
+
+        .galeria {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+img {
+
+    width: 360px
+}

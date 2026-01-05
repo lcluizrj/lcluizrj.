@@ -1,0 +1,28 @@
+@media screen and (max-width: 800px) {
+    
+}
+
+.quadrado {
+    width: 62.5px;
+    height: 62.5px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.preto {
+    background: #000000;
+}
+
+.vermelho {
+    background: rgb(255, 3, 3);
+}
+
+.tabuleiro {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: 2px solid black;
+}
