@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wdth,wght@75,400..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DynaPuff", system-ui, sans-serif;
+}
+
+h2 {
+    font-weight: 1;
+    letter-spacing: 0.1;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 100%;
+    margin-top: 300px;
+}
+
+header {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+p {
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 40px;
+}
+
+.button-section {
+    margin-top: 40px;
+    font-weight: 100;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background: #ff0;
+
+}
+
+.link-header {
+    margin-left: 43px;
+    line-height: 30px;
+    font-weight: 200;
+    font-size: 17px;
+
+}
+
+.button-header {
+    font-weight: 100;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background: #ff0;
+}
+
+.image-coffe {
+    margin-left: 400px;
+    margin-top: 180px;
+    display: inline-block;
+
+}
+
+section {
+    display: inline-block;
+    width: 500px;
+    margin-left: 90px;
+}

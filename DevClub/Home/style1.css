@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+header {
+    font-weight: 200;
+    font-size: 15px;
+    color: blue;
+    margin-left: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+    
+}
+.button-header {
+    border-radius: 20px;
+    background-color: greenyellow;
+    color: black;
+    width: 60px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+img {
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+section {
+    display: inline-block;
+    width: 500px;
+    margin-left: 100px;
+}
+.button-section {
+    border-radius: 20px;
+    background-color: greenyellow;
+    color: black;
+    width: 90px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 80px;
+}
+footer {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 15px;
+    color: blue;
+    margin-right: 100px;
+    cursor: pointer;
+    margin-top: 300px;
+}
+.link-footer {
+    margin-left: 20px;
+}
+h1 {
+    font-weight: 900;
+    font-size: 45px;
+    
+
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 30px;
+
+}
+p {
+    margin-top: 80px;
+}
+
+
+
+
+@media screen and (orientation: portrait){
+    *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+    body {
+        background: red;
+        
+    }
+header {
+    font-weight: 200;
+    font-size: 15px;
+    color: blue;
+    margin-left: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+    
+}
+.button-header {
+    border-radius: 20px;
+    background-color: greenyellow;
+    color: black;
+    width: 60px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+img {
+    
+    width: 300px;
+    margin-top: 50px;
+}
+section {
+   
+    width: 300px;
+    
+}
+.button-section {
+    border-radius: 20px;
+    background-color: greenyellow;
+    color: black;
+    width: 90px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 80px;
+}
+footer {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 15px;
+    color: blue;
+    margin-right: 100px;
+    cursor: pointer;
+    margin-top: 300px;
+}
+.link-footer {
+    margin-left: 20px;
+}
+h1 {
+    font-weight: 900;
+    font-size: 35px;
+    
+
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 25px;
+
+}
+p {
+    margin-top: 80px;
+    font-size: 20px;
+}
+    
+}
